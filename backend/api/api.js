@@ -39,15 +39,26 @@ router.post('/jatek', (request, response)=>{
 })
 
 router.post('/akasztofa/szokezelo', (request, response) => {
+    try{
+        let szo = request.body.value;
+        tomb.push({
+            szó: szo
+        });
+        response.status(200).json({
+            message: 'Ez a végpont működik!',
+            lista: tomb
+        });
+    }catch(error){
+        response.status(500).json({
+            message: 'Nem működik'
+        })
+    }
     
-    response.status(200).json({
-        message: 'Ez a végpont működik.'
-    });
 });
 
 router.get('/akasztofa/szokezelo', (request, response) => {
     response.status(200).json({
-        message: 'Ez a végpont működik.'
+        message: 'Ez a végpont működik!'
     });
 });
 

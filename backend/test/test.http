@@ -1,10 +1,9 @@
-POST http://127.0.0.1:3000/akasztofa/szokezelo
+POST http://127.0.0.1:3000/api/akasztofa/szokezelo
 content-type: application/json
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "value": "sample"
 }
 
 ###
-GET http://127.0.0.1:3000/akasztofa/szokezelo
+GET  http://127.0.0.1:3000/api/akasztofa/szokezelo
