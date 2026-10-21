@@ -27,7 +27,7 @@ router.get('/test', (request, response) => {
     });
 });
 
-<<<<<<< HEAD
+
 
 router.get('/jatek', (request, response)=>{
     try{
@@ -37,7 +37,7 @@ router.get('/jatek', (request, response)=>{
             
         })
     }catch(error){
-=======
+    
 router.post('/jatek', (request, response) => {
     try {
         response.status(200).json({
@@ -45,7 +45,7 @@ router.post('/jatek', (request, response) => {
             szo: tomb[Math.floor(Math.random() * (tomb.length - 0 + 1)) + 0]
         });
     } catch (error) {
->>>>>>> 0baa27382dbbc1c34e661e887d30158cf61d2500
+
         response.status(500).json({
             message: 'Nem működik'
         });
@@ -73,11 +73,11 @@ router.post('/akasztofa/szokezelo', (request, response) => {
 
 router.get('/akasztofa/szokezelo', (request, response) => {
     response.status(200).json({
-<<<<<<< HEAD
+
         message: 'Ez a végpont működik!',
-=======
+
         message: 'Ez a végpont működik!'
->>>>>>> 0baa27382dbbc1c34e661e887d30158cf61d2500
+
         
     });
 });
