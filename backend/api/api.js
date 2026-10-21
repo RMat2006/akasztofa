@@ -27,6 +27,7 @@ router.get('/test', (request, response) => {
     });
 });
 
+<<<<<<< HEAD
 
 router.get('/jatek', (request, response)=>{
     try{
@@ -36,20 +37,25 @@ router.get('/jatek', (request, response)=>{
             
         })
     }catch(error){
+=======
+router.post('/jatek', (request, response) => {
+    try {
+        response.status(200).json({
+            message: 'Működik',
+            szo: tomb[Math.floor(Math.random() * (tomb.length - 0 + 1)) + 0]
+        });
+    } catch (error) {
+>>>>>>> 0baa27382dbbc1c34e661e887d30158cf61d2500
         response.status(500).json({
-            message : "Nem működik"
-        })
+            message: 'Nem működik'
+        });
     }
-
-})
-
+});
 
 const tomb = [];
 
-
-
 router.post('/akasztofa/szokezelo', (request, response) => {
-    try{
+    try {
         let szo = request.body.value;
         tomb.push({
             szó: szo
@@ -58,23 +64,23 @@ router.post('/akasztofa/szokezelo', (request, response) => {
             message: 'Ez a végpont működik!',
             lista: tomb
         });
-    }catch(error){
+    } catch (error) {
         response.status(500).json({
             message: 'Nem működik'
-        })
+        });
     }
-    
 });
 
 router.get('/akasztofa/szokezelo', (request, response) => {
     response.status(200).json({
+<<<<<<< HEAD
         message: 'Ez a végpont működik!',
+=======
+        message: 'Ez a végpont működik!'
+>>>>>>> 0baa27382dbbc1c34e661e887d30158cf61d2500
         
     });
 });
-
-
-
 
 //?GET /api/testsql
 router.get('/testsql', async (request, response) => {
