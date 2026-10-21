@@ -27,11 +27,30 @@ router.get('/test', (request, response) => {
     });
 });
 
+<<<<<<< HEAD
 router.post('/jatek', (request, response)=>{
     response.status(200).json({
         
     })
 })
+=======
+const tomb = [];
+
+router.post('/akasztofa/szokezelo', (request, response) => {
+    
+    response.status(200).json({
+        message: 'Ez a végpont működik.'
+    });
+});
+
+router.get('/akasztofa/szokezelo', (request, response) => {
+    response.status(200).json({
+        message: 'Ez a végpont működik.'
+    });
+});
+
+
+>>>>>>> f8e8cc1ad7bafbe847b341d5e534660f5c046e0e
 
 //?GET /api/testsql
 router.get('/testsql', async (request, response) => {
