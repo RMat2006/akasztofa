@@ -32,6 +32,10 @@ router.get('/akasztofa', (request, response) => {
     response.sendFile(path.join(__dirname, '../frontend/html/fooldal.html'));
 });
 
+router.get('/akasztofa/szokezelo', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/szokezelo.html'));
+});
+
 //!API endpoints
 app.use('/', router);
 const endpoints = require('./api/api.js');
