@@ -6,6 +6,7 @@ const fs = require('fs/promises');
 //!Multer
 const multer = require('multer'); //?npm install multer
 const path = require('path');
+const { request } = require('http');
 
 const storage = multer.diskStorage({
     destination: (request, file, callback) => {
@@ -25,6 +26,12 @@ router.get('/test', (request, response) => {
         message: 'Ez a végpont működik.'
     });
 });
+
+router.post('/jatek', (request, response)=>{
+    response.status(200).json({
+        
+    })
+})
 
 //?GET /api/testsql
 router.get('/testsql', async (request, response) => {
