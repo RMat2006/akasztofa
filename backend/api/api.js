@@ -27,6 +27,7 @@ router.get('/test', (request, response) => {
     });
 });
 
+<<<<<<< HEAD
 
 
 router.get('/jatek', (request, response)=>{
@@ -39,10 +40,17 @@ router.get('/jatek', (request, response)=>{
     }catch(error){
     
 router.post('/jatek', (request, response) => {
+=======
+
+
+
+
+router.get('/jatek', (request, response) => {
+>>>>>>> e175592816bf25a9811cf55194e0d71485c2eaaa
     try {
         response.status(200).json({
             message: 'Működik',
-            szo: tomb[Math.floor(Math.random() * (tomb.length - 0 + 1)) + 0]
+            szo: tomb[Math.floor(Math.random() * (tomb.length - 0 )) + 0]
         });
     } catch (error) {
 
@@ -52,7 +60,7 @@ router.post('/jatek', (request, response) => {
     }
 });
 
-const tomb = [];
+const tomb = ['asd', 'asds'];
 
 router.post('/akasztofa/szokezelo', (request, response) => {
     try {
