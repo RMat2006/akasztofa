@@ -28,6 +28,10 @@ router.get('/', (request, response) => {
     response.sendFile(path.join(__dirname, '../frontend/html/index.html'));
 });
 
+router.get('/akasztofa', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/fooldal.html'));
+});
+
 //!API endpoints
 app.use('/', router);
 const endpoints = require('./api/api.js');
