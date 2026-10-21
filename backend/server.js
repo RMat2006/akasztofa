@@ -35,6 +35,9 @@ router.get('/akasztofa', (request, response) => {
 router.get('/akasztofa/szokezelo', (request, response) => {
     response.sendFile(path.join(__dirname, '../frontend/html/szokezelo.html'));
 });
+router.get('/akasztofa/jatek', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/jatek.html'));
+});
 
 //!API endpoints
 app.use('/', router);

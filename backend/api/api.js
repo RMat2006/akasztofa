@@ -36,9 +36,17 @@ const tomb = [];
 
 >>>>>>> ffadf92d104e947c8d49384bb44b79c93daaabfd
 router.post('/jatek', (request, response)=>{
-    response.status(200).json({
-        szo : tomb[Math.random(0, tomb.length)]
-    })
+    try{
+        response.status(200).json({
+            message: "Működik",    
+            szo : tomb[Math.floor(Math.random() * (tomb.length - 0 + 1) ) + 0]
+        })
+    }catch(error){
+        response.status(500).json({
+            message : "Nem működik"
+        })
+    }
+
 })
 <<<<<<< HEAD
 
