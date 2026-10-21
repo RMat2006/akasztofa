@@ -28,13 +28,12 @@ router.get('/test', (request, response) => {
 });
 
 
-<<<<<<< HEAD
-=======
 
 
-const tomb = [];
 
->>>>>>> ffadf92d104e947c8d49384bb44b79c93daaabfd
+
+
+
 router.post('/jatek', (request, response)=>{
     try{
         response.status(200).json({
@@ -48,11 +47,11 @@ router.post('/jatek', (request, response)=>{
     }
 
 })
-<<<<<<< HEAD
+
 
 const tomb = [];
-=======
->>>>>>> ffadf92d104e947c8d49384bb44b79c93daaabfd
+
+
 
 router.post('/akasztofa/szokezelo', (request, response) => {
     try{
