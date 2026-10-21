@@ -33,9 +33,17 @@ router.get('/test', (request, response) => {
 const tomb = [];
 
 router.post('/jatek', (request, response)=>{
-    response.status(200).json({
-        szo : tomb[Math.random(0, tomb.length)]
-    })
+    try{
+        response.status(200).json({
+            message: "Működik",    
+            szo : tomb[Math.floor(Math.random() * (tomb.length - 0 + 1) ) + 0]
+        })
+    }catch(error){
+        response.status(500).json({
+            message : "Nem működik"
+        })
+    }
+
 })
 
 router.post('/akasztofa/szokezelo', (request, response) => {
