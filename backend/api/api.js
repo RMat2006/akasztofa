@@ -28,13 +28,23 @@ router.get('/test', (request, response) => {
 });
 
 
-router.post('/jatek', (request, response)=>{
-    response.status(200).json({
-        
-    })
-})
+<<<<<<< HEAD
+=======
+
 
 const tomb = [];
+
+>>>>>>> ffadf92d104e947c8d49384bb44b79c93daaabfd
+router.post('/jatek', (request, response)=>{
+    response.status(200).json({
+        szo : tomb[Math.random(0, tomb.length)]
+    })
+})
+<<<<<<< HEAD
+
+const tomb = [];
+=======
+>>>>>>> ffadf92d104e947c8d49384bb44b79c93daaabfd
 
 router.post('/akasztofa/szokezelo', (request, response) => {
     try{
