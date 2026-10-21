@@ -28,17 +28,12 @@ router.get('/test', (request, response) => {
 });
 
 
-
-
-
-
-
-
-router.post('/jatek', (request, response)=>{
+router.get('/jatek', (request, response)=>{
     try{
         response.status(200).json({
             message: "Működik",    
             szo : tomb[Math.floor(Math.random() * (tomb.length - 0 + 1) ) + 0]
+            
         })
     }catch(error){
         response.status(500).json({
@@ -73,7 +68,8 @@ router.post('/akasztofa/szokezelo', (request, response) => {
 
 router.get('/akasztofa/szokezelo', (request, response) => {
     response.status(200).json({
-        message: 'Ez a végpont működik!'
+        message: 'Ez a végpont működik!',
+        
     });
 });
 

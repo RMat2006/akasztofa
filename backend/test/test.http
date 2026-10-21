@@ -10,13 +10,8 @@ GET  http://127.0.0.1:3000/api/akasztofa/szokezelo
 
 ###
 
-POST http://127.0.0.1:3000/api/jatek
-content-type: application/json
+GET  http://127.0.0.1:3000/api/jatek
 
-{
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
-}
 
 
 ###
