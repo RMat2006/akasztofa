@@ -1,4 +1,3 @@
-const { response } = require("express")
 
 const postmethod = async(url, data)=>{
     try{
@@ -36,24 +35,47 @@ const getmethod = async(url)=>{
 
 
 document.addEventListener("DOMContentLoaded", async()=>{
+    let p = document.getElementById("atvettszo")
+    const getresponse = await getmethod('/api/jatek')
+    let tomb = []
+    
+    for(let i = 0;i < getresponse.szo.length; i++){
+        tomb.push("_")
+        p.innerHTML += tomb[i]+" "
+    }
+
     document.getElementById("hozzaad").addEventListener('click', async()=>{
-
-        try{
-            let tippszoveg = document.getElementById("tipp")
-            let tippgonb = document.getElementById("hozzaad")
-            const getresponse = await getmethod('/api/akasztofa/szokezelo')
-            console.log(getresponse)
-
+        
+        p.innerHTML = ""
+        const betu = document.getElementById("tipp")
+        let ul = document.getElementsByTagName("ul")[0]
+        let li = document.createElement("li")
+        for(let i = 0;i < tomb.length; i++){
+            if(betu.value == getresponse.szo[i]){
+                tomb[i] = betu.value
+                p.innerHTML += tomb[i]
+                
+            }
+            else{
+                p.innerHTML += tomb[i]
+                li.innerText = betu.value
+                  
+            }
+            
+           
 
         }
-        catch(error)
-        {
+        ul.appendChild(li) 
 
-            console.log("hiba")
 
-        }
     })
+    
+        
+    
 
+
+    
+    
     
 
 
