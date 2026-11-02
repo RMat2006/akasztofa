@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", async()=>{
 
     let probak = document.createElement("p")
     probak.innerHTML = 15
+    let probaszam = probak.innerHTML
 
     body.appendChild(probak)
     
@@ -80,18 +81,19 @@ document.addEventListener("DOMContentLoaded", async()=>{
             let talalte = false
             let li = document.createElement("li")
             for(let i = 0; i < 15; i++){
-                for(let i = 0; i < tomb.length;i++){
-                    if(getresponse.szo[i] == betu.value){
-                        tomb[i] = betu.value
+                for(let j = 0; j < tomb.length;j++){
+                    if(getresponse.szo[j] == betu.value){
+                        tomb[j] = betu.value
                         p.innerHTML = tomb
                         talalte = true
                     }
                     else{
 
-                        if(i == tomb.length-1 && getresponse.szo[i] != betu.value && talalte == false){
+                        if(j == tomb.length-1 && getresponse.szo[j] != betu.value && talalte == false){
                             talalte = false
                             li.innerHTML = betu.value
-                  
+                            //
+                            
                         }
                     }
                 }
@@ -99,47 +101,73 @@ document.addEventListener("DOMContentLoaded", async()=>{
             
             }
             if(!talalte){
-            ul.appendChild(li)
-            probak.innerHTML = probak.innerHTML - 1
-            
-            
+                ul.appendChild(li)
+                probak.innerHTML = probak.innerHTML - 1
+                probaszam = probak.innerHTML
 
             }
 
             if(!tomb.includes("_")){
                 probak.innerHTML = "Nyertél"
             }
+            console.log(probaszam)
+            if(probaszam == 14){
+                body.style.backgroundImage = `url('../images/akasztofa${1}.png')`
+            }
+            if(probaszam == 13){
+                body.style.backgroundImage = `url('../images/akasztofa${2}.png')`
+            }
+            if(probaszam == 12){
+                body.style.backgroundImage = `url('../images/akasztofa${3}.png')`
+            }
+            if(probaszam == 11){
+                body.style.backgroundImage = `url('../images/akasztofa${4}.png')`
+            }
+            if(probaszam == 10){
+                body.style.backgroundImage = `url('../images/akasztofa${5}.png')`
+
+            }
+            if(probaszam == 9){
+                body.style.backgroundImage = `url('../images/akasztofa${6}.png')`
+
+            }
+
+            if(probaszam == 8){
+                body.style.backgroundImage = `url('../images/akasztofa${7}.png')`
+
+            }
+
+            if(probaszam == 7){
+                body.style.backgroundImage = `url('../images/akasztofa${8}.png')`
+            }
+            if(probaszam == 6){
+                body.style.backgroundImage = `url('../images/akasztofa${9}.png')`
+            }
+            if(probaszam == 5){
+                body.style.backgroundImage = `url('../images/akasztofa${10}.png')`
+            }
+            if(probaszam == 4){
+                body.style.backgroundImage = `url('../images/akasztofa${11}.png')`
+            }
+            if(probaszam == 3){
+                body.style.backgroundImage = `url('../images/akasztofa${12}.png')`
+            }
+            if(probaszam == 2){
+                body.style.backgroundImage = `url('../images/akasztofa${13}.png')`
+            }
+            if(probaszam == 1){
+                body.style.backgroundImage = `url('../images/akasztofa${14}.png')`
+            }                
+            if(probaszam == 0){
+                body.style.backgroundImage = `url('../images/akasztofa${15}.png')`
+                probak.innerHTML = "Vesztettél"
+            }
+
+            
+        
         }
-        
-        
-        
-        
-        
-        
-            
-            
-        
-                
-        
-            
-
-                
-            
-            
-                
-                
-            
-                  
-            
-            
-           
 
         
-       
-
-        
-     
-
 
     })
     

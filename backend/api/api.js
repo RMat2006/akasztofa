@@ -45,7 +45,7 @@ router.get('/jatek', (request, response) => {
     }
 });
 
-const tomb = ["asd", "asd2"];
+const tomb = [];
 
 router.post('/akasztofa/szokezelo/szohozzaad', (request, response) => {
     try {
