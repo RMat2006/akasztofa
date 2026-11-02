@@ -35,9 +35,25 @@ const getmethod = async(url)=>{
 
 
 document.addEventListener("DOMContentLoaded", async()=>{
+    let body = document.getElementsByTagName("body")[0]
     let p = document.getElementById("atvettszo")
     const getresponse = await getmethod('/api/jatek')
     let tomb = []
+
+    p.innerHTML = ""
+    const betu = document.getElementById("tipp")
+    let hiba = document.createElement("p")
+    hiba.setAttribute("hidden", "")
+    body.appendChild(hiba)
+    
+    let ul = document.getElementsByTagName("ul")[0]
+    
+    let j = 0;
+    let tombszova = ""
+    console.log(getresponse.szo)
+    for (let i = 0; i < tomb.length; i++){
+        tombszova += tomb[i]
+    }
     
     for(let i = 0;i < getresponse.szo.length; i++){
         tomb.push("_")
@@ -46,30 +62,66 @@ document.addEventListener("DOMContentLoaded", async()=>{
 
     document.getElementById("hozzaad").addEventListener('click', async()=>{
         
-        p.innerHTML = ""
-        const betu = document.getElementById("tipp")
-        let ul = document.getElementsByTagName("ul")[0]
-        let li = document.createElement("li")
+        if(betu.value.length > 1){
+          
+            hiba.innerHTML = "kérem egy karaktert adjon meg"
+            hiba.removeAttribute("hidden")
+        } 
+        else{
+            hiba.setAttribute("hidden", "")
+            
+            let talalte = false
+            let li = document.createElement("li")
+            for(let i = 0; i < 20; i++){
+                for(let i = 0; i < tomb.length;i++){
+                    if(getresponse.szo[i] == betu.value){
+                        tomb[i] = betu.value
+                        p.innerHTML = tomb
+                        talalte = true
+                    }
+                    else{
+
+                        if(i == tomb.length-1 && getresponse.szo[i] != betu.value && talalte == false){
+                            talalte = false
+                            li.innerHTML = betu.value
+                  
+                        }
+                    }
+                }
+           
+            
+            }
+            if(!talalte){
+            ul.appendChild(li)
+        }
+        }
         
-        for(let i = 0;i < tomb.length; i++){
-            if(betu.value == getresponse.szo[i]){
-                tomb[i] = betu.value
-                p.innerHTML += tomb[i]
+        
+        
+        
+        
+        
+            
+            
+        
                 
+        
+            
 
                 
+            
+            
                 
-            }
-            else{
-                p.innerHTML += tomb[i]
-                li.innerText = betu.value
+                
             
                   
-            }
+            
             
            
 
-        }
+        
+       
+
         
      
 
