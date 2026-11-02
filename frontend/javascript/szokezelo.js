@@ -31,11 +31,28 @@ document.addEventListener('DOMContentLoaded', async () => {
         bevitel();
     });
 
+    document.getElementById("torolGomb").addEventListener('click', async ()=>{
+        torol();
+    });
+
+    async function torol(){
+        const eltavolitInput = document.getElementById("eltavolit");
+        let eltavolitErtek = eltavolitInput.value;
+        try{
+            const postResponse = await PostMethod('/api/akasztofa/szokezelo/szotorol',{
+                value: eltavolitErtek
+            })
+            console.log("Működik: ", postResponse)
+        }catch(error){
+            console.Error("Post hiba van!");
+        }
+    }
+
     async function bevitel() {
         const bevitelInput = document.getElementById('bevitel');
         let bevitelErtek = bevitelInput.value;
         try {
-            const postResponse = await PostMethod('/api/akasztofa/szokezelo', {
+            const postResponse = await PostMethod('/api/akasztofa/szokezelo/szohozzaad', {
                 value: bevitelErtek
             });
             console.log('A post értéke: ', postResponse);

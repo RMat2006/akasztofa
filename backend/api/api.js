@@ -50,7 +50,7 @@ const tomb = [{
     szó:"asd2"
 }];
 
-router.post('/akasztofa/szokezelo', (request, response) => {
+router.post('/akasztofa/szokezelo/szohozzaad', (request, response) => {
     try {
         let szo = request.body.value;
         tomb.push({
@@ -67,14 +67,31 @@ router.post('/akasztofa/szokezelo', (request, response) => {
     }
 });
 
+router.post('/akasztofa/szokezelo/szotorol', (request, response) => {
+    try {
+        let torolSzo= request.body.value;
+        let index = tomb.indexOf(torolSzo);
+        
+        tomb.splice(index,1)
+        
+        
+        
+        response.status(200).json({
+            message: 'Ez a végpont működik!',
+            lista: tomb
+        });
+    } catch (error) {
+        response.status(500).json({
+            message: 'Nem működik'
+        });
+    }
+});
+
 router.get('/akasztofa/szokezelo', (request, response) => {
     response.status(200).json({
 
         message: 'Ez a végpont működik!',
-
-        message: 'Ez a végpont működik!'
-
-        
+        lista: tomb        
     });
 });
 
