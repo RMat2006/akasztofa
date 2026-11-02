@@ -45,6 +45,9 @@ document.addEventListener("DOMContentLoaded", async()=>{
     let hiba = document.createElement("p")
     hiba.setAttribute("hidden", "")
     body.appendChild(hiba)
+
+    let probak = document.createElement("p")
+    probak.innerHTML = 20
     
     let ul = document.getElementsByTagName("ul")[0]
     
@@ -70,6 +73,8 @@ document.addEventListener("DOMContentLoaded", async()=>{
         else{
             hiba.setAttribute("hidden", "")
             
+            
+            
             let talalte = false
             let li = document.createElement("li")
             for(let i = 0; i < 20; i++){
@@ -93,6 +98,10 @@ document.addEventListener("DOMContentLoaded", async()=>{
             }
             if(!talalte){
             ul.appendChild(li)
+            probak.innerHTML = probak.innerHTML - 1
+            body.appendChild(probak)
+
+
         }
         }
         
