@@ -47,13 +47,15 @@ document.addEventListener("DOMContentLoaded", async()=>{
     body.appendChild(hiba)
 
     let probak = document.createElement("p")
-    probak.innerHTML = 20
+    probak.innerHTML = 15
+
+    body.appendChild(probak)
     
     let ul = document.getElementsByTagName("ul")[0]
     
     let j = 0;
     let tombszova = ""
-    console.log(getresponse.szo)
+    
     for (let i = 0; i < tomb.length; i++){
         tombszova += tomb[i]
     }
@@ -77,7 +79,7 @@ document.addEventListener("DOMContentLoaded", async()=>{
             
             let talalte = false
             let li = document.createElement("li")
-            for(let i = 0; i < 20; i++){
+            for(let i = 0; i < 15; i++){
                 for(let i = 0; i < tomb.length;i++){
                     if(getresponse.szo[i] == betu.value){
                         tomb[i] = betu.value
@@ -99,10 +101,14 @@ document.addEventListener("DOMContentLoaded", async()=>{
             if(!talalte){
             ul.appendChild(li)
             probak.innerHTML = probak.innerHTML - 1
-            body.appendChild(probak)
+            
+            
 
+            }
 
-        }
+            if(!tomb.includes("_")){
+                probak.innerHTML = "Nyertél"
+            }
         }
         
         
