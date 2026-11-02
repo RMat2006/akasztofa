@@ -50,22 +50,28 @@ document.addEventListener("DOMContentLoaded", async()=>{
         const betu = document.getElementById("tipp")
         let ul = document.getElementsByTagName("ul")[0]
         let li = document.createElement("li")
+        
         for(let i = 0;i < tomb.length; i++){
             if(betu.value == getresponse.szo[i]){
                 tomb[i] = betu.value
                 p.innerHTML += tomb[i]
                 
+
+                
+                
             }
             else{
                 p.innerHTML += tomb[i]
                 li.innerText = betu.value
+            
                   
             }
             
            
 
         }
-        ul.appendChild(li) 
+        
+     
 
 
     })
