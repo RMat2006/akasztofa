@@ -39,10 +39,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const eltavolitInput = document.getElementById("eltavolit");
         let eltavolitErtek = eltavolitInput.value;
         try{
-            const postResponse = await PostMethod('/api/akasztofa/szokezelo/szotorol',{
-                value: eltavolitErtek
-            })
-            console.log("Működik: ", postResponse)
+            const postResponse = await PostMethod('/api/akasztofa/szokezelo/szotorol', {szo: eltavolitErtek})
+            console.log("Post eredménye: ", postResponse)
         }catch(error){
             console.Error("Post hiba van!");
         }
@@ -52,9 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const bevitelInput = document.getElementById('bevitel');
         let bevitelErtek = bevitelInput.value;
         try {
-            const postResponse = await PostMethod('/api/akasztofa/szokezelo/szohozzaad', {
-                value: bevitelErtek
-            });
+            const postResponse = await PostMethod('/api/akasztofa/szokezelo/szohozzaad', {szo: bevitelErtek});
             console.log('A post értéke: ', postResponse);
         } catch (error) {
             console.error('Hiba történt.', error.message);

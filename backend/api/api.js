@@ -35,7 +35,7 @@ router.get('/jatek', (request, response) => {
     try {
         response.status(200).json({
             message: 'Működik',
-            szo: tomb[Math.floor(Math.random() * (tomb.length - 0 )) + 0].szó
+            szo: tomb[Math.floor(Math.random() * (tomb.length - 0 )) + 0]
         });
     } catch (error) {
 
@@ -45,17 +45,12 @@ router.get('/jatek', (request, response) => {
     }
 });
 
-const tomb = [{
-    szó: "asd1",
-    szó:"asd2"
-}];
+const tomb = ["asd", "asd2"];
 
 router.post('/akasztofa/szokezelo/szohozzaad', (request, response) => {
     try {
-        let szo = request.body.value;
-        tomb.push({
-            szó: szo
-        });
+        let szo = request.body.szo;
+        tomb.push(szo);
         response.status(200).json({
             message: 'Ez a végpont működik!',
             lista: tomb
@@ -69,17 +64,24 @@ router.post('/akasztofa/szokezelo/szohozzaad', (request, response) => {
 
 router.post('/akasztofa/szokezelo/szotorol', (request, response) => {
     try {
-        let torolSzo= request.body.value;
+        let torolSzo = request.body.szo;
+        console.log(torolSzo);
         let index = tomb.indexOf(torolSzo);
+
+        if (index != -1) {
+            tomb.splice(index,1)
+            response.status(200).json({
+                message: 'Ez a végpont működik!',
+                lista: tomb
+            });
+        }
+        else {
+            response.status(404).json({
+                message: 'A szó nem található!'
+            });
+        }
         
-        tomb.splice(index,1)
         
-        
-        
-        response.status(200).json({
-            message: 'Ez a végpont működik!',
-            lista: tomb
-        });
     } catch (error) {
         response.status(500).json({
             message: 'Nem működik'

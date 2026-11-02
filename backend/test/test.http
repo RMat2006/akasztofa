@@ -11,7 +11,7 @@ POST http://127.0.0.1:3000/api/akasztofa/szokezelo/szotorol
 content-type: application/json
 
 {
-    "value": "sample"
+    "szo": "asd1"
 }
 
 ###
