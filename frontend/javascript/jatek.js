@@ -68,12 +68,15 @@ document.addEventListener("DOMContentLoaded", async()=>{
 
     document.getElementById("hozzaad").addEventListener('click', async()=>{
         
-        if(betu.value.length > 1){
+        if(betu.value.length > 1 ){
           
             hiba.innerHTML = "kérem egy karaktert adjon meg"
             hiba.removeAttribute("hidden")
         } 
         else{
+            if(probaszam > 0){
+
+            
             hiba.setAttribute("hidden", "")
             
             
@@ -166,6 +169,7 @@ document.addEventListener("DOMContentLoaded", async()=>{
             
         
         }
+    }
 
         
 
